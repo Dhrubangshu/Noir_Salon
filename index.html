@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noir Salon</title>
+    <link rel="icon" href="favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+
+
+    <style>
+        body {
+            font-family:Georgia, 'Times New Roman', Times, serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #000;
+            color: #fff;
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+        .section-heading{
+            font-size: 2px;
+            margin-bottom: 10px;
+        }
+
+        nav {
+            text-align: center;
+        }
+
+        .logo {
+            float: left;
+            color: yellow;
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+            margin-right: 20px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 14px 16px;
+            display: inline-block;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+            color: yellow;
+        }
+
+        .book-now {
+            float: right;
+            background-color: yellow;
+            color: #000;
+            border: none;
+            padding: 10px 5px;
+            margin: 0 5px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: bold;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            text-decoration: none; /* Add this line to remove the default underline */
+
+        }
+        .book-now:hover {
+            background-color: #e6b800; /* Darker yellow on hover */
+            text-decoration: none;
+            color: #000;
+        }
+
+        .content {
+            margin-top: 80px; /* Adjust based on your header height */
+            padding: 20px;
+            margin: 0 auto;
+        }
+        .hero {
+          background-image: url('Images/BackgroundImage.jpg'); /* Replace with the path to your background image */
+          background-size: 100% 100%;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-color: rgba(0, 0, 0, 0); 
+          color:#fff;
+          text-align: center;
+          padding: 260px 10px;
+      }
+
+      .hero h1 {
+          font-size: 48px;
+          font-weight: bold;
+          margin-bottom: 20px;
+          color:antiquewhite;
+          font-family:'Times New Roman', Times, serif;
+      }
+
+      .hero p {
+          font-size: 30px;
+          font-family:cursive;
+          font-weight:bolder;
+          color: antiquewhite;
+      }
+      .about-us {
+        background: #f4f4f4; /* Set background color for the about us section */
+        text-align: center;
+        padding: 80px 10px;
+    }
+    .about-us p {
+               text-align:center;
+               font-family:cursive
+    }
+    section {
+        position: relative;
+        padding: 0px 10px; /* Adjust the padding to control the space at both ends of the line */
+
+    }
+    
+    section {
+        border-bottom: 3px solid #000; /* Adjust the thickness and color of the line */
+        padding-bottom: 10px; /* Adjust the padding to control the space between the line and content */
+    }
+
+      .services {
+          text-align: center;
+          padding: 10px;
+      }
+
+      .service-box {
+          border: 2px solid #000;
+          padding: 10px;
+          margin: 20px;
+          border-radius: 10px;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+      }
+      .services .service-box p {
+        font-family: cursive;
+      }
+
+      .service-box:hover {
+          background-color:yellow;
+      }
+      .services .service-grid {
+        display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 20px;
+    }
+
+
+      .contact {
+          text-align: center;
+          padding: 10px;
+      }
+      .contact-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px; /* Adjust the gap between the contact info and the map */
+    }
+
+      .contact-info {
+        background-color: #f2f2f2; /* Background color of the box */
+        padding: 20px; /* Padding inside the box */
+        border-radius: 8px; /* Border radius for rounded corners */
+        margin: 20px auto; /* Margin to create space around the box */
+        max-width: 300px; /* Set a maximum width for the box */
+        width: 195px; /* Make the box responsive to its container */   
+        border: 2px solid black;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .contact-info p {
+        margin:10px 0; /* Remove default margin for paragraphs inside the box */
+        font-size:large;
+    }
+    .google-map {
+        /* Your styling for the map container */
+        border-radius: 8px;
+        overflow: hidden; /* Hide overflow to round the corners */
+        height: 300px; /* Set a fixed height for the Google Map box */
+        max-width: 100%; /* Set a maximum width for the Google Map box */
+        width: calc(100% - 320px);
+
+    }
+    
+      .about-us,
+      .services,
+      .gallery,
+      .contact{
+        padding: 40px 10px;
+      }
+      .about-us h1,
+      .services h1,
+      .gallery h1,
+      .contact h1 {
+        text-align: center;
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+      footer {
+        background: #000;
+        color: yellow;
+        padding: 10px 20px;
+        text-align: left;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    footer a {
+        color: yellow;
+        text-decoration: none;
+    }
+
+    footer a:hover {
+        text-decoration: underline;
+    }
+    .service-list {
+        list-style-position: inside; /* Move the bullet points inside the list item */
+        text-align:left; /* Center-align the text within the list items */
+        padding: 0; /* Remove default padding to control spacing */
+        
+    }
+   .service-list .service-list li {
+        margin: 5px 0; /* Adjust the margin as needed */
+    }
+    .logo img {
+        max-width: 100%;
+        height: auto;
+    }
+   
+    .section-heading img {
+        max-width: 100%;
+        height: auto;
+        border: 2px solid #000;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+    @media only screen and (max-width: 600px) {
+        .google-map {
+            width: 100%;
+        }
+    }
+  /* Styles for larger screens */
+  .navbar-large {
+    display: block;
+}
+
+.navbar-large {
+    display: block;
+}
+
+/* Styles for smaller screens */
+.navbar-small {
+    display: none;
+}
+
+.menu-icon {
+    display: none;
+    cursor: pointer;
+}
+
+.nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #000;
+    z-index: 1000;
+}
+
+.nav-links.show {
+    display: flex;
+}
+
+.nav-links a {
+    padding: 14px 16px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    border-bottom: 1px solid #fff;
+}
+/* Add styles for centered social icons and handles */
+.social-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 20px; /* Adjust margin for spacing from the contact section */
+}
+
+.social-handles {
+    font-size: 18px; /* Adjust the font size of social media handles */
+    margin-bottom: 10px; /* Adjust margin between handles and icons */
+}
+
+.social-icons {
+    display: flex;
+    gap: 20px; /* Adjust the space between icons */
+    font-size: 24px; /* Adjust the icon size */
+}
+
+/* Additional styles for individual icons if needed */
+.social-icons a {
+    color: #000; /* Adjust the icon color */
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    color: #ffcc00; /* Adjust the hover color */
+}
+.gallery {
+    text-align: center;
+    padding: 40px 10px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    gap: 20px; /* Adjust the gap between photos */
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    height: 100%; 
+}
+
+ </style>
+</head>
+
+<body>
+    <header>
+        <div class="navbar-large">
+            <nav>
+                <!-- Original navigation bar code -->
+                <a href="#" class="logo"><img src="Logo1.png" alt="Noir" width="100"></a>
+                <a href="#hero">Home</a>
+                <a href="#services">Services</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#about-us">About Us</a>
+                <a href="#contact">Contact</a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSehQ25s2ko-FbdPifTvzJLIo9sf6Ox4qKVu78zxDweXjfhCEw/viewform" target="_blank" class="book-now">Book Now</a>
+            </nav>
+        </div>
+        
+        <div class="navbar-small">
+            <!-- Responsive menu code -->
+            <div class="menu-icon" onclick="toggleMenu()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <a href="#hero">Home</a>
+                <a href="#services">Services</a>
+                <a href="#about-us">About Us</a>
+                <a href="#contact">Contact</a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSehQ25s2ko-FbdPifTvzJLIo9sf6Ox4qKVu78zxDweXjfhCEw/viewform" target="_blank" class="book-now">Book Now</a>
+            </ul>
+        </div>
+    </header>
+
+    <section id="hero" class="hero">
+      <h1>Welcome to Noir Salon - East India's Largest Salon</h1>
+      <p>Experience the Art of Beauty in Every Detail.
+    </p>
+  </section>
+  <section id="about-us" class ="about-us">
+    <h1>About Us</h1>
+    <p>Welcome to Noir Salon, your premier destination for exceptional hair and beauty services in the vibrant city of Guwahati. As the leading salon in the region, we take pride in offering a personalized and luxurious experience to each of our valued clients.
+        At Noir Salon, our team of skilled stylists is committed to delivering top-notch services that go beyond the ordinary. We specialize in precision cuts, vibrant coloring, and the latest trends in hairstyles, ensuring that you leave our salon with a look that perfectly complements your individual style. Located in the heart of Guwahati, our modern and chic salon provides a welcoming and comfortable environment where sophistication meets relaxation.
+        Our commitment to excellence extends to understanding and prioritizing your unique preferences. We believe that each client is unique, and our stylists take the time to listen and tailor their services to meet your specific style and beauty needs. Whether you're seeking a bold transformation or a subtle enhancement, Noir Salon is dedicated to making it happen.
+    </p>
+</section>
+
+  <section id="services" class="services">
+      <h1>Services</h1>
+      <div class="service-grid">
+        <div class="service-box" onclick="window.open">
+         <h2>Hair</h2>
+         <ul class="service-list">
+            <li>Hair Cut and Wash</li>
+            <li>Hair Styling</li>
+            <li>Hair Texture</li>
+            <li>Hair Coloring & Highlights</li>
+            <li>Hair & Scalp Treatments</li>
+            <li>Keratase Hair Rituals</li>
+            <!-- Add more bullet points as needed -->
+        </ul>
+      </div>
+      <div class="service-box" onclick="location.href='#skin-body'">
+          <h2>Skin & Body</h2>
+          <ul class="service-list">
+            <li>Threading</li>
+            <li>Waxing</li>
+            <li>Bleach</li>
+            <li>Facials</li>
+            <li>Skin Rejuvenating Masks</li>
+            <li>Body Massage</li>
+            <li>Body Exfoliation</li>
+            <li>Body Wraps</li>
+            <!-- Add more bullet points as needed -->
+        </ul>
+      </div>
+      <div class="service-box" onclick="location.href='#hands-feet'">
+          <h2>Hands and Feet</h2>
+          <ul class="service-list">
+            <li>Manicures</li>
+            <li>Pedicures</li>
+            <li>Scrubs & Exfoliations</li>
+        </ul>
+      </div>
+      <div class="service-box" onclick="location.href='#nail-studio'">
+          <h2>Nail Studio</h2>
+          <ul class="service-list">
+            <li>Gel Polish</li>
+            <li>Nail Extensions</li>
+            <li>Nail 3D & Gel Arts</li>
+        </ul>
+      </div>
+      <div class="service-box" onclick="location.href='#make-up'">
+          <h2>Make Up, Dressing and Bridals</h2>
+          <ul class="service-list">
+            <li>Saree Draping </li>
+            <li>Eye Makeups</li>
+            <li>Hair Up do Stylings</li>
+            <li>Party Makeup</li>
+            <li>Bridal Makeup</li>
+            <li>Groom Makeup</li>
+            <li>Pre-Bridal Services</li>
+            <!-- Add more bullet points as needed -->
+        </ul>
+      </div>
+      </div>
+  </section>
+
+  <section id="gallery" class="gallery">
+    <h1>Gallery</h1>
+    <div class="gallery-grid">
+        <!-- Gallery items -->
+        <div class="gallery-item">
+            <img src="women1.jpg" alt="Photo 1">
+        </div>
+        <div class="gallery-item">
+            <img src="men1.jpg" alt="Photo 2">
+        </div>
+        <div class="gallery-item">
+            <img src="MenThumb.jpg" alt="Photo 3">
+        </div>
+        <div class="gallery-item">
+            <img src="womenthumb.jpg" alt="Photo 4">
+        </div>
+        <div class="gallery-item">
+            <img src="bridalthumb.jpg" alt="Photo 4">
+        </div><div class="gallery-item">
+            <img src="wedding1.jpg" alt="Photo 4">
+        </div>
+        <!-- Add more gallery items as needed -->
+    </div>
+</section>
+
+  <section id="contact" class="contact">
+      <h1>Contact</h1>
+      <div class="contact-grid">
+      <div class="contact-info">
+          <p><strong>Address:</strong> 3rd Floor, Aurus Mall, Dispur, Assam-781306</p>
+          <p><strong>Phone:</strong> xxxxxxxxxx</p>
+          <p><strong>Email:</strong> xxx@gmail.com</p>
+      </div>
+      <div class="google-map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3581.6868166232216!2d91.79307147446005!3d26.141752592798504!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x375a590c837206a5%3A0xf45f37d8dd68c774!2sAurus%20Mall!5e0!3m2!1sen!2sin!4v1703136628205!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    </div>
+      <div class="appointment-button">
+        <h3>FOR APPOINTMENTS OR ANY RELATED QUERIES PLEASE <a href="https://docs.google.com/forms/d/e/1FAIpQLSehQ25s2ko-FbdPifTvzJLIo9sf6Ox4qKVu78zxDweXjfhCEw/viewform?usp=sf_link" target="_blank" style="background-color: #ffcc00; color: #000; padding: 10px 20px; text-decoration: none; border-radius: 8px; display: inline-block;">CLICK HERE</a></h3>
+    </div>
+    <div class="social-container">
+        <div class="social-handles">
+            Follow us on:
+        </div>
+    <div class="social-icons">
+        <!-- Facebook Icon -->
+        <a href="https://www.facebook.com/your-facebook-profile" target="_blank" title="Facebook">
+            <i class="fab fa-facebook"></i>
+        </a>
+    
+        <!-- Instagram Icon -->
+        <a href="https://www.instagram.com/your-instagram-profile" target="_blank" title="Instagram">
+            <i class="fab fa-instagram"></i>        </a>
+    </div>
+  </section>
+  <footer>
+    <p>All Rights Reserved &copy; 2023 | Noir Salon, Guwahati</p>
+</footer>
+<script>
+    function toggleMenu() {
+        var navLinks = document.getElementById("navLinks");
+        navLinks.classList.toggle("show");
+    }
+</script>
+</body>
+
+</html>
